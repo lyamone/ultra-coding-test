@@ -1,0 +1,11 @@
+<div class="toast-container position-fixed top-0 end-0 p-3">
+  <ngb-toast
+    *ngFor="let toast of (toastService.toasts$ | async)"
+    class="bg-danger text-light"
+    [autohide]="true"
+    [delay]="5000"
+    (hidden)="toastService.remove(toast)">
+    {{ toast }}
+  </ngb-toast>
+</div>
+
