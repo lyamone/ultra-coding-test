@@ -15,7 +15,7 @@ export class GiphyImagesComponent implements OnChanges {
 
   constructor() { }
 
-  ngOnChanges(changes): void {
+  ngOnChanges(changes: SimpleChanges): void {
     // Reset pagination when new search is started
     if(changes.giphyResult.currentValue.pagination?.offset===0) {
       this.currentPage = 1;

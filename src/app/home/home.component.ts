@@ -38,7 +38,7 @@ export class HomeComponent {
 
   constructor(private giphyApiService: GiphyApiService) {}
 
-  public doImageSearch(text) {
+  public doImageSearch(text: string) {
     this.searchText = text;
     this.imageSearch.next({
       q: text,
