@@ -1,10 +1,24 @@
-# UltraCodingTest
+# Ultra Coding Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+A simple page that let users search images in the Giphy API.
 
-## Development server
+Start typing in the search box and see results.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Get started
+
+Clone the repository 
+
+<pre>git clone https://github.com/lyamone/ultra-coding-test.git</pre>
+
+Install dependencies
+<pre>cd ultra-coding-test</pre>
+<pre>npm i</pre>
+
+Run development server
+
+<pre>npm start</pre>
+
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
