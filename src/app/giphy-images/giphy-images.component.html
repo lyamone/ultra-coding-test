@@ -1,0 +1,43 @@
+<ng-container *ngIf="giphyResult">
+  <div class="container">
+    <div class="row row-cols-3">
+      <div *ngFor="let result of giphyResult.data; trackBy: trackByItems"
+        class="col bg-gray-200 img-container">
+        <img [src]="result.images.fixed_height.url"
+          (load)="$event.target.classList.add('image-loaded')"
+          class="img-thumbnail img-fluid hidden"
+          id="{{result.id}}"
+          [alt]="result.title">
+
+        <div class="d-flex justify-content-center loader">
+          <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-container *ngIf="giphyResult?.pagination as pagination">
+      <ng-container *ngIf="pagination.total_count >0; else noResults" >
+        <ngb-pagination
+          class="d-flex justify-content-center pt-3"
+          [(page)]="currentPage"
+          [boundaryLinks]="true"
+          [maxSize]="5"
+          [size]="'sm'"
+          [pageSize]="pagination.count"
+          [rotate]="true"
+          [boundaryLinks]="false"
+          [collectionSize]="pagination.total_count"
+          (pageChange)="onPageChange($event)">
+        </ngb-pagination>
+      </ng-container>
+      <ng-template #noResults>
+        <div class="d-flex">
+          <p>No results</p>
+        </div>
+      </ng-template>
+    </ng-container>
+
+  </div>
+</ng-container>
