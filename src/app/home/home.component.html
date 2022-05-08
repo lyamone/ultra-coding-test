@@ -1,0 +1,17 @@
+<app-navbar (searchImage)="doImageSearch($event)"></app-navbar>
+
+<div class="container">
+  <ng-container *ngIf="images$ | async as result">
+    <p *ngIf="searchText.length > 0" class="px-3">
+      Results: {{ result?.pagination?.total_count ?? 0 }}
+    </p>
+    <app-giphy-images
+      [giphyResult]="result"
+      (pageChange)="onPageChange($event)"
+      *ngIf="searchText"
+    >
+    </app-giphy-images>
+  </ng-container>
+</div>
+
+<app-toast aria-live="polite" aria-atomic="true"></app-toast>
