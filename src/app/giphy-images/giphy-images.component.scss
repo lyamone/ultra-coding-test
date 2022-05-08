@@ -1,0 +1,13 @@
+.img-container {
+  img {
+    height: 200px;
+  }
+}
+
+.image-loaded + .loader {
+  display: none !important;
+}
+
+.image-loaded {
+  display: block;
+}
